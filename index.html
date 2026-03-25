@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Citation Networks Poster - Amended</title>
+
+<style>
+/* ------------------ BASE & COLOR SCHEME ------------------ */
+html {
+  font-size: clamp(14px, 1vw, 22px);
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  /* background: #E0E0E0;  */
+  background: #DAD8C9;
+  color: #000000;
+  padding-bottom: 2rem;
+}
+
+/* ------------------ HEADER SECTION ------------------ */
+.header-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.header-box {
+ background: #D3D3D3; 
+ /*   background: #696969; */
+  width: 90%;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 10px 60px rgba(0,0,0,0.5);
+  position: relative;
+  border-top: 8px solid #800000;
+}
+
+.header-box h1 {
+  color: #800000;
+  font-size: 2.8rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-box h3 {
+  color: #444;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+/* LOGO PLACEHOLDERS */
+.logo-left, .logo-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12rem;
+  height: auto;
+  min-height: 6rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo-left { 
+  left: 2rem; 
+  background-image: url("./Code%20and%20Samples/NCCU%20SchoolLibInfoSci%20PMS%20202%20logo500px.png");
+}
+
+.logo-right { 
+  right: 2rem; 
+background-image: url("./Code%20and%20Samples/primary_clr400px.jpg");
+}
+
+/* ------------------ MAIN GRID ------------------ */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  gap: 2rem;
+  padding: 0 2rem;
+  align-items: start;
+}
+
+/* ------------------ PANELS (Shadow Boxes) ------------------ */
+.panel {
+  background: #ffffff;
+  color: #000000;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+  color: #800000;
+  font-size: 1.5rem;
+  margin-top: 0;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+p, ul {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ------------------ FIGURES ------------------ */
+.figure-box {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+.figure-box img {
+  width: 100%;
+  border-radius: 0.3rem;
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: #555;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* ------------------ METRICS & CALLOUTS ------------------ */
+.callout {
+  background: #f9f9f9;
+  border-left: 5px solid #800000;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  background: #eee;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.footer {
+  text-align: center;
+  color: #666;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+@media print {
+  @page {
+    size: 36in 24in;
+    margin: 0;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    width: 36in;
+    height: 24in;
+    -webkit-print-color-adjust: exact; /* Ensures colors and shadows export */
+  }
+  .poster {
+    width: 36in;
+    height: 24in;
+    max-width: none;
+    box-shadow: none; /* Removes web-only shadows for a clean print */
+  }
+}
+
+/* LOGO & QR BOX STYLES */
+.logo-box-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f9fbfd;
+  border-radius: 0.6rem;
+  border: 1px solid #e6eef5;
+}
+
+.logo-item {
+  flex: 1;
+  max-width: 120px; /* Adjust size as needed */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.qr-label {
+  font-size: 0.7rem;
+  color: #0b2a4a;
+  margin-top: 0.3rem;
+  font-weight: bold;
+}
+  
+</style>
+</head>
+
+<body>
+
+<div class="header-container">
+  <div class="header-box">
+    <div class="logo-left"></div>
+    <div class="logo-right"></div>
+    <h1>Citation Networks of Suspected Predatory Publishers in Nursing Literature</h1>
+    <h3>J. Walker (1), G Peterson (1), E. Wheeles (2), M. Quazi (3), H Carter-Templeton (3)</h3>
+    <h3>(1) NCCU, (2) University of Missouri, Saint Louis, (3) West Virginia University School of Nursing</h3>
+  </div>
+</div>
+
+<div class="main">
+
+  <div class="column">
+    <div class="panel">
+      <h2>Abstract</h2>
+      <ul>
+        <li>Predatory publishing poses a growing threat to scientific integrity.</li>
+        <li>This study investigates structural differences in citation networks of nursing literature.</li>
+        <li>Legitimate journals are embedded in larger, more diverse ecosystems.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>Research Question</h2>
+      <p>Do citation networks of suspected predatory publishers exhibit structurally different patterns from those of legitimate publishers?</p>
+      <div class="callout">Hypothesis: There is a quantifiable difference in clustering and connectivity.</div>
+    </div>
+
+    <div class="panel">
+      <h2>Methods</h2>
+      <ul>
+        <li>60 articles per group (Predatory vs. Legitimate)</li>
+        <li>Sources: Cabell’s, Oermann (2016), and INANE</li>
+        <li>Data: OpenAlex citation records</li>
+        <li>Analysis: 1–3 hop network expansion</li>
+        <p>
+        Using the OpenAlex database, a Python script computed clustering coefficients and constructed up to 3rd-degree (hop) ego citation maps to characterize each group's citation ecosystem.
+      </p>
+      </ul>
+    </div>
+        <div class="panel">
+      <h2>Logos & Resources</h2>
+      <div class="logo-box-container">
+        <div class="logo-item">
+          <img src="./NCCU SchoolLibInfoSci PMS 202 logo500px.png" alt="NCCU SLIS">
+        </div>
+        
+        <div class="logo-item">
+          <img src="./primary_clr400px.jpg" alt="NCCU Eagles">
+        </div>
+
+        <div class="logo-item">
+          <img src="./logos/url_qrcodecreator.com_15_20_50.svg" alt="Scan for Resources">
+          <div class="qr-label">Scan for Code</div>
+        </div>
+      </div>
+    </div>
+<div>
+ 
+
+
+
+  </div>
+   
+  </div>
+
+  <div class="column">
+    <div class="panel">
+      <h2>Visual Analysis</h2>
+      <div class="figure-box">
+        <strong>Figure 1: Citation Density</strong>
+        <img src="./fig1-1-hop-citation_network.png" alt="Citation Density Graph">
+        <div class="caption">Legitimate articles exhibit substantially higher citation counts.</div>
+      </div>
+      <div class="figure-box">
+        <strong>Figure 2: Network Structure</strong>
+        <img src="./fig3-2-hopcommunities_comparison.png" alt="Network Map">
+        <div class="caption">Network expansion reveals significantly greater scale in legitimate literature.</div>
+      </div>
+    </div>
+
+    
+    
+
+  </div>
+
+  <div class="column">
+
+ <div class="panel">
+      <h2>Results</h2>
+      <div class="metric"><span>Citations / article</span><strong>20 vs 6</strong></div>
+      <div class="metric"><span>2-hop network size</span><strong>47k vs 12k</strong></div>
+      <div class="metric"><span>Communities</span><strong>76 vs 55</strong></div>
+      <p>Legitimate articles averaged ~20 references vs. ~6 for predatory articles. At 2 hops, the legitimate network was roughly four times larger.</p>
+    </div>
+
+    <div class="panel">
+      <h2>Conclusion</h2>
+      <p>Citation network structure meaningfully distinguishes articles from legitimate publishers versus suspected predatory ones. Bibliometric analysis could serve as an automated tool for flagging potentially predatory publications.</p>
+    </div>
+    
+    <div class="panel">
+      <h2>Discussion</h2>
+      <p>Analyzing 2nd and 3rd-hop citation networks reveals the broader scholarly community. Legitimate articles sit within a large, well-connected research community, whereas predatory articles engage with a smaller, more insular slice of literature. This points to qualitative differences in how articles are integrated into scientific discourse.</p>
+    </div>
+<div class="panel">
+      <h2>References</h2>
+      <div class="csl-bib-body" style="line-height: 1.4; font-size: 0.8rem;">
+        <div class="csl-entry" style="margin-bottom: 0.8rem;"><i>Cabells</i>. (n.d.). <a href="https://cabells.com/solutions/predatory-reports">https://cabells.com/solutions/predatory-reports</a></div>
+        <div class="csl-entry" style="margin-bottom: 0.8rem;">Kakamad, et. al., (2024). Lists of predatory journals. <i>European Science Editing</i>, 50.</div>
+        <div class="csl-entry" style="margin-bottom: 0.8rem;">Oermann, M. H., et. al., (2016). Study of Predatory Nursing Journals. <i>Journal of Nursing Scholarship</i>.</div>
+        <div class="csl-entry">Priem, J., et. al., (2022). <i>OpenAlex: A fully-open index</i>. arXiv:2205.01833.</div>
+      </div>
+    </div>
+    <div class="panel">
+      <li>Presented at GURS 2026 • NCCU School of Library and Information Sciences</li>
+  <li>Contact information: gpeterson@nccu.edu</li>
+  <li><a href="https://github.com/gabepete-hulkor/GURS_Poster_2026/tree/main/CodeAndSamples">Code and Samples</a>  </li> 
+    
+    </div>
+  </div>
+
+</div>
+<hr>
+  <!--
+<div class="footer">
+  <ul>  
+  <li>Presented at GURS 2026 • NCCU School of Library and Information Sciences</li>
+  <li>Contact information: gpeterson@nccu.edu</li>
+  <li><a href="https://github.com/gabepete-hulkor/GURS_Poster_2026/tree/main/CodeAndSamples">Code and Samples</a>  </li> 
+  </ul>
+
+</div>
+-->
+</body>
+</html>

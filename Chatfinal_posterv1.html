@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Publication Poster</title>
+
+<style>
+@page { size: 36in 24in; margin: 0; }
+
+body {
+  width: 36in;
+  height: 24in;
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #eef3f8;
+  color: #1a1a1a;
+}
+
+/* HEADER */
+.header {
+  height: 240px;
+  background: linear-gradient(135deg,#0b2a4a,#1f5d8a);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 220px;
+  position: relative;
+}
+
+.header h1 {
+  font-size: 56px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+/* LOGO AREAS */
+.logo-left, .logo-right {
+  position: absolute;
+  top: 30px;
+  width: 170px;
+  height: 110px;
+  border: 2px dashed rgba(255,255,255,0.5);
+}
+
+.logo-left { left: 40px; }
+.logo-right { right: 40px; }
+
+/* GRID LAYOUT */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  gap: 28px;
+  padding: 30px;
+  height: calc(100% - 240px);
+}
+
+/* PANELS */
+.panel {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+h2 {
+  color: #0b2a4a;
+  font-size: 28px;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #e6eef5;
+  padding-bottom: 6px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+ul {
+  font-size: 20px;
+  line-height: 1.45;
+  padding-left: 20px;
+}
+
+/* FIGURE AREA */
+.figure {
+  background: #f9fbfd;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+.figure img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.caption {
+  font-size: 16px;
+  margin-top: 8px;
+  color: #444;
+}
+
+/* KEY FINDINGS */
+.callout {
+  background: #e6f4f2;
+  border-left: 6px solid #00a99d;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+/* METRIC BOXES */
+.metric {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.metric strong {
+  color: #0b2a4a;
+}
+
+/* FOOTER */
+.footer {
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  font-size: 16px;
+  color: #666;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo-left"></div>
+  <div class="logo-right"></div>
+
+  <h1>
+    Citation Networks of Suspected Predatory Publishers:<br>
+    A Bibliometric Analysis
+  </h1>
+</div>
+
+<div class="main">
+
+  <!-- LEFT COLUMN -->
+  <div>
+
+    <div class="panel">
+      <h2>Abstract</h2>
+      <p>
+   Predatory publishing poses a growing threat to scientific integrity, including in nursing literature. This study investigates whether citation networks of articles from suspected predatory publishers differ structurally from those of legitimate publishers. Findings reveal that articles from legitimate journals are embedded in substantially larger, more diverse citation ecosystems, while predatory articles connect to a smaller, more concentrated subset of the literature. These structural differences suggest citation network analysis may serve as a useful metric for identifying untrustworthy scholarly work.
+
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Research Question</h2>
+      <p>
+        Do citation networks of articles from suspected predatory publishers exhibit structurally different patterns from those of legitimate publishers? The hypothesis is that higher-quality articles will show greater clustering and broader connectivity, reflecting integration within a cohesive cross-disciplinary scholarly community.
+      </p>
+      <div class="callout">
+        Hypothesis: There is a quantifiable diffrence in the citation patterns of content from predatory publishers.
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Methods</h2>
+      <ul>
+        <li>60 articles per group</li>
+        <li>Predatory: Cabell’s + Oermann (2016)</li>
+        <li>Legitimate: INANE journals</li>
+        <li>OpenAlex citation data</li>
+        <li>1–3 hop network expansion</li>
+        <li>Community detection + clustering</li>
+      </ul>
+      A citation network analysis was conducted on 60 articles from suspected predatory nursing journals and 60 from high-impact, legitimate nursing journals. Predatory journals were identified via Cabell's list and Oermann's 2016 study; the control set was drawn from journals listed with INANE (International Academy of Nursing Editors). Using the OpenAlex database, a Python script computed clustering coefficients and constructed up to 3rd-degree (hop) ego citation maps to characterize each group's citation ecosystem.
+    </div>
+
+  </div>
+
+  <!-- CENTER COLUMN (VISUAL FOCUS) -->
+  <div>
+
+    <div class="panel figure">
+      <h2>Figure 1 — Citation Density</h2>
+      <img src="./fig1-1-hop-citation_network.png">
+      <div class="caption">
+        Legitimate articles exhibit substantially higher citation counts per publication.
+      </div>
+    </div>
+
+    <div class="panel figure">
+      <h2>Figure 2 — Citation Network Structure</h2>
+      <img src="./fig3-2-hopcommunities_comparison.png">
+      <div class="caption">
+        Network expansion reveals significantly greater scale and interconnectivity in legitimate literature.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div>
+
+    <div class="panel">
+      <h2>Results</h2>
+
+      <div class="metric">
+        <span>Citations / article</span>
+        <strong>20 vs 6</strong>
+      </div>
+
+      <div class="metric">
+        <span>2-hop network size</span>
+        <strong>47k vs 12k</strong>
+      </div>
+
+      <div class="metric">
+        <span>Communities</span>
+        <strong>76 vs 55</strong>
+      </div>
+
+      <div class="callout">
+        Analyzing 2nd and 3rd-hop citation networks — citations to papers that cite the originals — reveals the broader scholarly community surrounding each article, analogous to examining mutual connections in a social network rather than just direct relationships. Legitimate articles sit within a large, diverse, and well-connected research community, whereas predatory articles engage with a smaller, more insular slice of the literature. This structural distinction goes beyond simple citation counts, pointing to qualitative differences in how these articles are integrated into scientific discourse.
+
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Discussion</h2>
+      <p>
+        Analyzing 2nd and 3rd-hop citation networks — citations to papers that cite the originals — reveals the broader scholarly community surrounding each article, analogous to examining mutual connections in a social network rather than just direct relationships. Legitimate articles sit within a large, diverse, and well-connected research community, whereas predatory articles engage with a smaller, more insular slice of the literature. This structural distinction goes beyond simple citation counts, pointing to qualitative differences in how these articles are integrated into scientific discourse.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Conclusion</h2>
+      <ul>
+        <li>Clear structural divergence in citation topology</li>
+        <li>Legitimate work shows stronger scholarly integration</li>
+        <li>Citation networks offer a scalable detection signal</li>
+      </ul>
+      Citation network structure meaningfully distinguishes articles from legitimate publishers versus suspected predatory ones. Legitimate nursing journal articles demonstrate broader scholarly engagement, greater topical diversity, and stronger integration within the scientific knowledge network. These findings suggest that bibliometric analysis of citation ecosystems could serve as an automated, scalable tool for flagging potentially predatory or low-quality publications — offering a practical complement to existing identification methods like Cabell's list.
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  Add institutional affiliations • QR code • contact info here
+</div>
+
+</body>
+</html>
